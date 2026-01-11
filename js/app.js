@@ -19,7 +19,12 @@ let board, turn, winner,tie;
 
 /*------------------------ Cached Element References ------------------------*/
 
-
+// a.In a constant called squareEls, store the nine elements representing the squares on the page.
+const squareEls = document.querySelectorAll('.sqr');
+// b.In a constant called messageEl, store the element that displays the game’s status on the page.
+const messageEl = document.getElementById('message');
+console.log(squareEls);
+console.log(messageEl);
 
 /*-------------------------------- Functions --------------------------------*/
 
