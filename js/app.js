@@ -26,7 +26,7 @@ let tie;     // did the game end in a tie?
 
 /*------------------------ Cached Element References ------------------------*/
 
-// State first 
+// Screen second
 
 // a.In a constant called squareEls, store the nine elements representing the squares on the page.
 const squareEls = document.querySelectorAll('.sqr');
@@ -63,6 +63,11 @@ function init() {
 
 init();
 
+// Update the board display based on the current state
+function render() {
+    console.log('render ran'); 
+    
+}
 
 
 // initialize 9-element board array representing 3x3 grid and document empty ('') vs 'X'/'O' markers
