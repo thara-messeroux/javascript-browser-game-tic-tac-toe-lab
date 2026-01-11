@@ -8,8 +8,8 @@ console.log("App initialized");
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-// State first 
 
+// State first 
 
 // a.Use a variable named board to represent the state of the squares on the board.
 
@@ -19,12 +19,10 @@ console.log("App initialized");
 
 // d.Use a variable named tie to represent if the game has ended in a tie.
 
-
 let board;   // what’s in each square
 let turn;    // whose turn it is
 let winner;  // who won (or null)
 let tie;     // did the game end in a tie?
-
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -41,14 +39,37 @@ console.log('messageEl:', messageEl);
 /*-------------------------------- Functions --------------------------------*/
 
 //  Logic last
+
 function init() {
+
     console.log('init ran');
+
+    // The board array represents the 3x3 grid of the Tic-Tac-Toe game.
+    // Each element in the array corresponds to a square on the board,
+    // with indices 0-2 for the first row, 3-5 for the second row, and 6-8 for the third row.
+    // An empty string '' indicates an unoccupied square, while 'X' or 'O' indicates
+    // that the square is occupied by player X or player O, respectively.
+
+    board = ['', '', '',
+        '', '', '',
+        '', '', ''];
+
+    turn = 'X';      // X always starts first
+    
 }
+
 init();
 
+
+
+// initialize 9-element board array representing 3x3 grid and document empty ('') vs 'X'/'O' markers
+
+
+
+
+             
+
 /*----------------------------- Event Listeners -----------------------------*/
-
-
 
 //1) Define the required variables used to track the state of the game.
 
