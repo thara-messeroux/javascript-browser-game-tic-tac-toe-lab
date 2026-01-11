@@ -58,7 +58,7 @@ function init() {
     winner = false;   // No winner at the start
     tie = false;     // No tie at the start
     render(); // Render the initial state of the game
-
+    updateBoard();
 }
 
 init();
@@ -69,8 +69,12 @@ function render() {
     
 }
 
+// Create a function called updateBoard to update the board display
+function updateBoard() {
+    console.log('updateBoard ran'); 
+}
 
-// initialize 9-element board array representing 3x3 grid and document empty ('') vs 'X'/'O' markers
+
 
 
 
