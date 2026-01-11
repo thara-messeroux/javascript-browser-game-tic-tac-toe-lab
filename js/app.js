@@ -1,10 +1,15 @@
 console.log("App initialized");
 
+// State first → Screen second → Logic last
+
+
 /*-------------------------------- Constants --------------------------------*/
 
 
 
 /*---------------------------- Variables (state) ----------------------------*/
+// State first 
+
 
 // a.Use a variable named board to represent the state of the squares on the board.
 
@@ -15,20 +20,31 @@ console.log("App initialized");
 // d.Use a variable named tie to represent if the game has ended in a tie.
 
 
-let board, turn, winner,tie;
+let board;   // what’s in each square
+let turn;    // whose turn it is
+let winner;  // who won (or null)
+let tie;     // did the game end in a tie?
+
 
 /*------------------------ Cached Element References ------------------------*/
+
+// State first 
 
 // a.In a constant called squareEls, store the nine elements representing the squares on the page.
 const squareEls = document.querySelectorAll('.sqr');
 // b.In a constant called messageEl, store the element that displays the game’s status on the page.
 const messageEl = document.getElementById('message');
-console.log(squareEls);
-console.log(messageEl);
+console.log('squareEls:', squareEls);
+console.log('messageEl:', messageEl);
+
 
 /*-------------------------------- Functions --------------------------------*/
 
-
+//  Logic last
+function init() {
+    console.log('init ran');
+}
+init();
 
 /*----------------------------- Event Listeners -----------------------------*/
 
