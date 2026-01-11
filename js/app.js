@@ -55,7 +55,10 @@ function init() {
         '', '', ''];
 
     turn = 'X';      // X always starts first
-    
+    winner = false;   // No winner at the start
+    tie = false;     // No tie at the start
+    render(); // Render the initial state of the game
+
 }
 
 init();
