@@ -59,6 +59,7 @@ function init() {
     tie = false;     // No tie at the start
     render(); // Render the initial state of the game
     updateBoard();
+    updateMessage()
 }
 
 init();
@@ -99,6 +100,11 @@ function updateBoard() {
 
 
     });
+}
+
+function updateMessage() {
+    console.log('updateMessage ran');
+
 }
 
 
