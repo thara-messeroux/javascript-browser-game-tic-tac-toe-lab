@@ -138,6 +138,12 @@ function updateMessage() {
     }
 }
 
+function handleClick(evt) {
+    console.log('square clicked');
+
+    const squareIndex = evt.target.id; /* 🐞 which square was clicked (0–8) */
+    console.log('squareIndex:', squareIndex);
+}
 
 
 
@@ -165,3 +171,6 @@ function updateMessage() {
 
 //7) Create Reset functionality.
 
+squareEls.forEach((square) => {
+    square.addEventListener('click', handleClick); /* 🦋 listen for clicks */
+});
