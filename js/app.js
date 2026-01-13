@@ -26,8 +26,6 @@ const winningCombos = [
 ];
 
 
-
-
 /*---------------------------- Variables (state) ----------------------------*/
 
 // State first
@@ -197,8 +195,6 @@ function checkForTie() {
 }
 
 
-
-             
 
 /*----------------------------- Event Listeners -----------------------------*/
 // EVENT
