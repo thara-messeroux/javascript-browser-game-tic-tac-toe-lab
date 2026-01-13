@@ -58,6 +58,10 @@ const messageEl = document.getElementById('message');
 console.log('squareEls:', squareEls);
 console.log('messageEl:', messageEl);
 
+const resetBtnEl = document.getElementById('reset');
+resetBtnEl.addEventListener('click', init);
+
+
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -216,5 +220,5 @@ function checkForTie() {
 //7) Create Reset functionality.
 
 squareEls.forEach((square) => {
-    square.addEventListener('click', handleClick); /* 🦋 listen for clicks */
+    square.addEventListener('click', handleClick); /* listen for clicks */
 });
