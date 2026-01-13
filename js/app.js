@@ -152,6 +152,8 @@ function handleClick(evt) {
 
     placePiece(squareIndex); /* update memory */
     render();                /* update screen */
+    switchPlayerTurn();
+
 }
 
 function placePiece(index) {
