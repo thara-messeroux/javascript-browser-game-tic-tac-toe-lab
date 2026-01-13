@@ -148,8 +148,15 @@ function handleClick(evt) {
     if (winner === true) return;           /* block clicks after a win */
 
     console.log('valid click'); /* passed the guard rails */
+
+
+    placePiece(squareIndex); /* update memory */
+    render();                /* update screen */
 }
 
+function placePiece(index) {
+    board[index] = turn; /* store current player's mark in memory */
+}
 
 
 
