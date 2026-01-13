@@ -70,26 +70,26 @@ function render() {
     
 }
 
-// 🧩 This function's job is ONLY to update what the player sees on the screen
+// This function's job is ONLY to update what the player sees on the screen
 // It does NOT change the game rules or memory
 function updateBoard() {
 
-    // 🐣 This line just helps us check that the function actually ran
+    // This line just helps us check that the function actually ran
     console.log('updateBoard ran');
 
-    // 🔁 We go through EACH spot in our game memory (the board array)
+    // We go through EACH spot in our game memory (the board array)
     // Think: "Let's check square 0, then 1, then 2… all the way to 8"
     board.forEach((mark, index) => {
 
-        // 📦 `mark` = what is stored in memory for this square
+        // `mark` = what is stored in memory for this square
         // It could be:
         // 'X' → player X played here
         // 'O' → player O played here
         // ''  → nobody played here yet
 
-        // 🔢 `index` = which square number we are on (0–8)
+        // `index` = which square number we are on (0–8)
 
-        // 👀 Now we update the SCREEN to match the MEMORY
+        // Now we update the SCREEN to match the MEMORY
         // We find the square on the page that matches this index
         // and put the letter from memory inside it
         squareEls[index].textContent = mark;
