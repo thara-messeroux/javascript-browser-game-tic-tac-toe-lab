@@ -158,6 +158,14 @@ function placePiece(index) {
     board[index] = turn; /* store current player's mark in memory */
 }
 
+function switchPlayerTurn() {
+    if (turn === 'X') {
+        turn = 'O';
+    } else {
+        turn = 'X';
+    }
+}
+
 
 
 
