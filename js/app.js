@@ -150,9 +150,14 @@ function handleClick(evt) {
     console.log('valid click'); /* passed the guard rails */
 
 
-    placePiece(squareIndex); /* update memory */
-    render();                /* update screen */
-    switchPlayerTurn();
+    placePiece(squareIndex);
+    checkForWinner();
+
+    if (winner === false) {
+        switchPlayerTurn();
+    }
+
+    render();
 
 }
 
@@ -169,6 +174,17 @@ function switchPlayerTurn() {
 }
 
 
+function checkForWinner() {
+    winningCombos.forEach((combo) => {
+        const a = combo[0];
+        const b = combo[1];
+        const c = combo[2];
+
+        if (board[a] !== '' && board[a] === board[b] && board[a] === board[c]) {
+            winner = true;
+        }
+    });
+}
 
 
              
