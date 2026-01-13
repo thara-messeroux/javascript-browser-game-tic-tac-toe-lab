@@ -1,6 +1,14 @@
 console.log("App initialized");
 
 // State first → Screen second → Logic last
+// STATE → RENDER → EVENT → STATE → RENDER → EVENT → ...
+/*
+The UI is a mirror.
+State is the truth.
+Events change the truth.
+*/
+// click → update state → render again
+
 
 
 /*-------------------------------- Constants --------------------------------*/
@@ -9,7 +17,8 @@ console.log("App initialized");
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-// State first 
+// State first
+// STATE
 
 // a.Use a variable named board to represent the state of the squares on the board.
 
@@ -27,6 +36,7 @@ let tie;     // did the game end in a tie?
 /*------------------------ Cached Element References ------------------------*/
 
 // Screen second
+// RENDER
 
 // a.In a constant called squareEls, store the nine elements representing the squares on the page.
 const squareEls = document.querySelectorAll('.sqr');
@@ -38,7 +48,8 @@ console.log('messageEl:', messageEl);
 
 /*-------------------------------- Functions --------------------------------*/
 
-//  Logic last
+// Screen second
+// RENDER
 
 function init() {
 
@@ -58,8 +69,7 @@ function init() {
     winner = false;   // No winner at the start
     tie = false;     // No tie at the start
     render(); // Render the initial state of the game
-    updateBoard();
-    updateMessage()
+    
 }
 
 init();
@@ -67,6 +77,8 @@ init();
 // Update the board display based on the current state
 function render() {
     console.log('render ran'); 
+    updateBoard();
+    updateMessage();
     
 }
 
@@ -98,13 +110,21 @@ function updateBoard() {
         squareEls[index].classList.toggle('x', mark === 'X');
         squareEls[index].classList.toggle('o', mark === 'O');
 
-
     });
 }
 
+// render function
+// read state from memory but does NOT change anything in memory
 function updateMessage() {
     console.log('updateMessage ran');
 
+    if (winner == false && tie == false) {
+        messageEl.textContent = `It's ${turn}'s turn!`;
+    } else if (winner == false && tie == true) {
+        messageEl.textContent = "It's a tie!";
+    } else {
+        messageEl.textContent = `${winner} wins!`;
+    }   
 }
 
 
@@ -115,6 +135,8 @@ function updateMessage() {
              
 
 /*----------------------------- Event Listeners -----------------------------*/
+// EVENT
+// Logic last
 
 //1) Define the required variables used to track the state of the game.
 
