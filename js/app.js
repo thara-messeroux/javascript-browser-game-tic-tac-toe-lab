@@ -61,9 +61,7 @@ function init() {
     // An empty string '' indicates an unoccupied square, while 'X' or 'O' indicates
     // that the square is occupied by player X or player O, respectively.
 
-    board = ['', '', '',
-        '', '', '',
-        '', '', ''];
+    board = Array(9).fill('');  // Start with an empty board
 
     turn = 'X';      // X always starts first
     winner = false;   // No winner at the start
@@ -118,14 +116,15 @@ function updateBoard() {
 function updateMessage() {
     console.log('updateMessage ran');
 
-    if (winner == false && tie == false) {
+    if (winner === false && tie === false) {
         messageEl.textContent = `It's ${turn}'s turn!`;
-    } else if (winner == false && tie == true) {
+    } else if (winner === false && tie === true) {
         messageEl.textContent = "It's a tie!";
     } else {
-        messageEl.textContent = `${winner} wins!`;
-    }   
+        messageEl.textContent = `${turn} wins!`;
+    }
 }
+
 
 
 
