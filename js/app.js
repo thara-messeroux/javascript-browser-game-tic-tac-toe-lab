@@ -141,10 +141,14 @@ function updateMessage() {
 function handleClick(evt) {
     console.log('square clicked');
 
-    const squareIndex = evt.target.id; /* 🐞 which square was clicked (0–8) */
+    const squareIndex = parseInt(evt.target.id); /* make it a number */
     console.log('squareIndex:', squareIndex);
-}
 
+    if (board[squareIndex] !== '') return; /* block clicking taken squares */
+    if (winner === true) return;           /* block clicks after a win */
+
+    console.log('valid click'); /* passed the guard rails */
+}
 
 
 
