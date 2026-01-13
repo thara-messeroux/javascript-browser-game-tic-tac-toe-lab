@@ -18,3 +18,91 @@ body {
     font-size: 64px;
     text-align: center;
 }
+
+/* ---------- */
+/* Page basics: dark background inspired by the reference image */
+body {
+    background-color: #2b2e66;
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    color: white;
+    text-align: center;
+    padding-top: 32px;
+}
+
+/* The board container: a simple “glass” panel that holds the 9 squares */
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 330px;
+    margin: 16px auto;
+    padding: 12px;
+    gap: 10px;
+
+    /* Liquid-glass feel: slightly transparent + blur */
+    background-color: rgba(52, 58, 130, 0.55);
+    backdrop-filter: blur(10px);
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Each square: a clickable tile that centers X/O */
+.sqr {
+    width: 30%;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 64px;
+    border-radius: 12px;
+    cursor: pointer;
+
+    /* Soft tile look */
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+
+    /* Smooth hover animation */
+    transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+/* Hover effect: makes the tile feel interactive */
+.sqr:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Your JS toggles these classes based on the board state */
+.sqr.x {
+    color: #6be7d7;
+    /* X = aqua */
+}
+
+.sqr.o {
+    color: #ffb55c;
+    /* O = orange */
+}
+
+/* Reset button: simple, modern, matches X color */
+#reset {
+    background-color: #c54e30;
+    /* same as X */
+    color: #ffffff;
+    /* dark text for contrast */
+    border: none;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+
+    /* Smooth hover animation */
+    transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+/* Hover effect: feels “fun” and clickable */
+#reset:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
