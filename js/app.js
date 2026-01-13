@@ -152,6 +152,7 @@ function handleClick(evt) {
 
     placePiece(squareIndex);
     checkForWinner();
+    checkForTie();
 
     if (winner === false) {
         switchPlayerTurn();
@@ -185,6 +186,12 @@ function checkForWinner() {
         }
     });
 }
+
+function checkForTie() {
+    if (winner === true) return;
+    tie = board.every((square) => square !== '');
+}
+
 
 
              
